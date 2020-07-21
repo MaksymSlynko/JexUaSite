@@ -1,0 +1,53 @@
+<div class="header">
+  <div id="sideLines"></div>
+  <div class="header-pannel">
+    <div class="header-pannel-nav">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" checked />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a [routerLink]="[ '/main' ]" routerLinkActive="active-link">
+              <li>Main</li>
+            </a>
+            <a [routerLink]="[ '/devices' ]" routerLinkActive="active-link">
+              <li>Devices</li>
+            </a>
+            <a [routerLink]="[ '/videos' ]" routerLinkActive="active-link">
+              <li>Videos</li>
+            </a>
+            <a [routerLink]="[ '/shop' ]" routerLinkActive="active-link">
+              <li>Shop</li>
+            </a>
+            <a [routerLink]="[ '/basket' ]" routerLinkActive="active-link">
+              <li>Basket&nbsp;{{suma}}$</li>
+            </a>
+            <a [routerLink]="[ '/admin' ]" routerLinkActive="active-link">
+              <li>Admin pannel</li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- <div class="header-pannel-space"></div> -->
+    <div class="header-pannel-social">
+      <div class="twitch">
+        <a href="https://www.twitch.tv/jex_ua"><img src="../../../assets/images/twitch.png"></a>
+      </div>
+      <div class="discord">
+        <a href="https://discord.gg/y2gw6Ru"><img src="../../../assets/images/discord.png"></a>
+      </div>
+      <div class="tiktok">
+        <a href=""><img src="../../../assets/images/tiktok.png"></a>
+      </div>
+      <div class="facebook">
+        <a href="https://www.facebook.com/maxim.karatist"><img src="../../../assets/images/facebook.png"></a>
+      </div>
+      <div class="inst">
+        <a href="https://www.instagram.com/maksym_slynko/"><img src="../../../assets/images/inst.png"></a>
+      </div>
+    </div>
+  </div>
+</div>

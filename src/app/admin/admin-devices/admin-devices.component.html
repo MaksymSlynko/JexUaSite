@@ -1,0 +1,39 @@
+<div class="add-panel">
+    <form class="panel" [formGroup]="deviceForm" (submit)="addDevice()">
+      <h1>Adding panel for devices</h1>
+      <div class="add-panel-input">
+        <label>Image url:</label>
+        <input type="text" placeholder="write url for device image" formControlName="img">
+      </div>
+      <div class="add-panel-input">
+        <label>Name:</label>
+        <input type="text" placeholder="write name of your device" formControlName="name">
+      </div>
+      <div class="add-panel-input">
+        <label>Model:</label>
+        <input type="text" placeholder="write model of your device" formControlName="description">
+      </div>
+      <button class="btn">{{ deviceForm.value.id ? 'EDIT' : 'ADD' }}</button>
+    </form>
+  </div>
+  
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>name</th>
+      <th>description</th>
+      <th>img</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of devices; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.img}}</td>
+        <td><button (click)="editDevice(item)">Edit</button></td>
+        <td><button (click)="deleteDevice(item)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

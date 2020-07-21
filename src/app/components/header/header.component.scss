@@ -1,0 +1,240 @@
+@import 'src/assets/styles/variables.scss';
+
+.header {
+  margin-top: 32px;
+  height: 25px;
+  width: 100%;
+  position: relative;
+  background-color: $lightDark;
+
+  &-pannel {
+    height: 24px;
+    width: 94.7%;
+    float: right;
+    border-top: 1px solid $red;
+    border-left: 1px solid $red;
+    display: flex;
+
+    &-nav {
+      height: 29px;
+      width: 70%;
+      // background-color: white;
+    }
+
+    &-social {
+      height: 29px;
+      width: 30%;
+      padding-left: 100px;
+      padding-right: 100px;
+      // background-color: white;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 7px;
+  left: 16px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: $white;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: $red;
+}
+
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 27px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: $white;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: $white;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+  padding: 20px 0px;
+  font-size: 1rem;
+  line-height: 15px;
+  font-family: 'Black Ops One', cursive;
+}
+#menu a:first-child li {
+  padding-top: 50px;
+}
+
+#menuToggle input:checked~ul {
+  transform: none;
+}
+
+#sideLines {
+  width: 87%;
+  height: 60vh;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  border-left: 1px solid $red;
+  border-right: 1px solid $red;
+}
+
+.active-link {
+  color: $red !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .header-pannel-nav {
+    width: 50%;
+  }
+
+  .header-pannel-social {
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 50%;
+  }
+  #menu a:first-child li {
+    padding-top: initial;
+  }
+  #sideLines{
+   left: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    width: 100%;
+    margin-top: 1px;
+    // background-color: white;
+
+    &-pannel {
+      width: 100%;
+
+      &-nav {
+        height: 29px;
+        width: 50%;
+        // background-color: white;
+      }
+
+      &-space {
+        display: none;
+      }
+
+      &-social {
+        width: 50%;
+        padding: 0px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+  }
+
+  #menu li {
+    padding: 15px 0px;
+    font-size: 14px;
+  }
+  #sideLines{
+    display: none;
+   }
+
+}
+
+@media screen and (max-width: 360px) {
+  .header {
+    margin-top: 0px;
+    background-color: $red;
+
+    &-pannel {
+      width: 100%;
+
+      &-social {
+        display: none;
+      }
+    }
+
+  }
+
+  #menuToggle {
+    top: 5px;
+    left: 5px;
+  }
+
+  #menu li {
+    padding: 10px 0px;
+    font-size: 12px;
+  }
+
+  #menu {
+    padding-top: 110px;
+  }
+}

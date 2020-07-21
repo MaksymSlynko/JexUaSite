@@ -1,0 +1,32 @@
+.main-block{
+    position: relative;
+    height: 77.2vh;
+    width: max-content;
+    margin-left: 20% ;
+    color: white;
+
+}
+.main-block h1{
+    padding-top: 5vh;
+    text-align: center;
+    font-size: 2rem;
+}
+.main-block nav{
+    padding-top: 5vh
+}
+.main-block li{
+    display: flex;
+    flex-direction: column;
+    height: 8vh;
+    justify-content: space-evenly;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+.active-link{
+    color: red;
+}

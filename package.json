@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
     "@angular/youtube-player": "^10.0.1",
-    "firebase": "^7.15.5",
+    "firebase": "^7.16.1",
     "jquery": "^3.5.1",
     "ngx-slick-carousel": "^0.5.1",
     "ngx-youtube-player": "^9.1.0",
