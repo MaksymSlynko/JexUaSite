@@ -1,0 +1,42 @@
+@import 'src/assets/styles/variables.scss';
+
+.add-panel{
+    position: absolute;
+    top: 20vh;
+    left: 30%;
+    width: 800px;
+    height: 400px;
+    color: $white;
+}
+.add-panel h1{
+    text-align: center;
+    font-size: 2rem;
+}
+.add-panel-input{
+    width: 100%;
+    height: 40px;
+    margin: 20px;
+}
+.add-panel-input input {
+    margin-top: 5px;
+    width: 100%;
+}
+.btn{
+    margin-left: 35%;
+    width: 30%;
+    background-color: lightcoral;
+    border: 2px solid #fff; 
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: lightskyblue;
+    font-weight: bold;
+}
+
+table {
+    background: white;
+}
+table, td, th {
+    background: seagreen;
+    border: 1px solid yellow;
+}

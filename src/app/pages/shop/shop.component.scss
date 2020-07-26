@@ -1,0 +1,333 @@
+@import 'src/assets/styles/variables.scss';
+
+.main {
+  position: relative;
+  background: url(../../../assets/images/ShopBack.png);
+  background-repeat: no-repeat;
+  background-position: 900px 145px;
+  background-size: 31%;
+}
+
+.main-block {
+  position: relative;
+  min-height: 78vh;
+  width: 60%;
+  margin-left: 400px;
+  color: $white;
+}
+
+.main-header {
+  width: max-content;
+  padding-top: 58px;
+  padding-bottom: 48px;
+
+  & h2 {
+    text-align: left;
+    font-family: 'Audiowide', cursive;
+    font-size: 36px;
+    line-height: 46px;
+    border-bottom: 2px solid $red;
+  }
+}
+
+
+.main-container {
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &-slick {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-product {
+    width: 292px;
+    height: 391px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &-image {
+      width: 232px;
+      height: 232px;
+      object-fit: contain;
+      object-position: center;
+      background: rgb(168, 168, 168);
+      border-radius: 15px;
+    }
+
+    &-name {
+      width: 219px;
+      font-family: 'Jura', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    &-description {
+      width: 219px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-family: 'Jura', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+.main-containerSmall {
+  display: none;
+
+  &-product {
+    width: 292px;
+    height: 391px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &-image {
+      width: 232px;
+      height: 232px;
+      object-fit: contain;
+      object-position: center;
+      background: rgb(168, 168, 168);
+      border-radius: 15px;
+    }
+
+    &-name {
+      width: 219px;
+      font-family: 'Jura', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    &-description {
+      width: 219px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-family: 'Jura', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .main-block {
+    margin-left: 300px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    background-position: 400px 200px;
+    background-size: 55%;
+  }
+
+  .main-block {
+    margin-left: 200px;
+    height: unset;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 29px;
+      line-height: 44px;
+    }
+  }
+
+  .main-container {
+    display: none;
+  }
+
+  .main-containerSmall {
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 924px) {
+
+  .main-containerSmall {
+    width: 550px;
+
+    &-product {
+      width: 230px;
+      height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &-image {
+        width: 232px;
+        height: 232px;
+        object-fit: contain;
+        object-position: center;
+        background: rgb(168, 168, 168);
+        border-radius: 15px;
+      }
+
+      &-name {
+        width: 219px;
+        font-family: 'Jura', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      &-description {
+        width: 219px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: 'Jura', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    background-position: 150px 70px;
+  }
+
+  .main-block {
+    margin-left: 150px;
+    min-height: 81vh;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+  .main-containerSmall {
+    width: 420px;
+
+    &-product {
+      width: 180px;
+      height: 280px;
+
+      &-image {
+        width: 180px;
+        height: 180px;
+      }
+
+      &-name {
+        width: 180px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      &-description {
+        width: 180px;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .main-block {
+    margin-left: 30px;
+    background-position: 0px 70px;
+  }
+
+  .main-container {
+    display: none;
+  }
+
+  .main-containerSmall {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .main-containerSmall {
+    width: 400px;
+
+    &-device {
+      height: 250px;
+      width: 250px;
+
+      &-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+      }
+
+      &-name {
+        width: 200px;
+        font-size: 17px;
+      }
+
+      &-description {
+        width: 200px;
+        font-family: 'Jura', sans-serif;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .main-containerSmall {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .main-block {
+    height: max-content;
+    margin-left: 0px;
+    padding: 0px 15px 0px 15px;
+    background-position: -50px 50px;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 28px;
+    padding-bottom: 18px;
+
+    & h2 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+
+}

@@ -1,1 +1,23 @@
-<p>devices works!</p>
+<div class="main">
+  <div class="main-block">
+    <div class="main-header">
+      <h2>Devices &nbsp;&nbsp;&nbsp;</h2>
+    </div>
+    <div class="main-container">
+      <ngx-slick-carousel class="main-container-slick" [config]='slideConfig'>
+        <div ngxSlickItem class="main-container-device" *ngFor="let d of devices">
+          <img class="main-container-device-image" [src]="d.img" alt="">
+          <div class="main-container-device-name">{{d.name}}</div>
+          <div class="main-container-device-description">{{d.description}}</div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="main-containerSmall"> 
+      <div class="main-containerSmall-device" *ngFor="let d of devices">
+        <img class="main-containerSmall-device-image" [src]="d.img" alt="">
+        <div class="main-containerSmall-device-name">{{d.name}}</div>
+        <div class="main-containerSmall-device-description">{{d.description}}</div>
+      </div>
+    </div>
+  </div>
+</div>

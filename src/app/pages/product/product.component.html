@@ -1,1 +1,38 @@
-<p>product works!</p>
+<div class="main">
+  <div class="main-block">
+    <div class="info">
+      <a [routerLink]="[ '/shop' ]">← Back to shop</a>
+      <div class="info-name">
+        <h2>{{product?.nameEN}}</h2>
+      </div>
+      <div class="info-product">
+        <div class="info-product-image">
+          <img class="info-product-image" [src]="product?.img" alt="">
+        </div>
+        <div class="info-product-right">
+          <div class="info-product-right-about">
+            <p>About product:</p>
+            <p>{{product?.price}}$</p>
+            <p>Size: {{product?.size}}</p>
+          </div>
+          <div class="count">
+            <div class="count-minus" (click)="productCount(false)">-</div>
+            <input [(ngModel)]="selectedCount" type="number" class="count-text">
+            <div class="count-plus" (click)="productCount(true)">+</div>
+          </div>
+          <div class="info-product-right-buttons">
+            <select [(ngModel)]="selectedSize">
+              <option [value]='null' disabled>Choose your size</option>
+              <option *ngFor="let s of sizes" [value]="s">size: {{s}}</option>
+            </select>
+            <div class="info-product-right-buttons-add">
+              <button [disabled]="!selectedSize" (click)="addToBasket(product)">
+                <span>Add to bag</span>
+                <span><img src="../../../assets/images/AddInBasket.png" alt=""></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

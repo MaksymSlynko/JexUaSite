@@ -1,1 +1,32 @@
-<p>shop works!</p>
+<div class="main">
+  <div class="main-block">
+    <div class="main-header">
+      <h2>Shop &nbsp;&nbsp;&nbsp;</h2>
+    </div>
+    <div class="main-container">
+      <ngx-slick-carousel class="main-container-slick" [config]='slideConfig'>
+        <div ngxSlickItem class="main-container-product slide" *ngFor="let p of products"
+          [routerLink]="[ '/shop', p.id ]">
+          <img class="main-container-product-image" [src]="p.img" alt="">
+          <div class="main-container-product-name">{{p.nameEN}}</div>
+          <div class="main-container-product-description">
+            <div>{{p.size}}</div>
+            <div>{{p.price}}$</div>
+            <img src="../../../assets/images/AddInBasket.png" alt="">
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="main-containerSmall">
+      <div class="main-containerSmall-product" *ngFor="let p of products" [routerLink]="[ '/shop', p.id ]">
+        <img class="main-containerSmall-product-image" [src]="p.img" alt="">
+        <div class="main-containerSmall-product-name">{{p.nameEN}}</div>
+        <div class="main-containerSmall-product-description">
+          <div>{{p.size}}</div>
+          <div>{{p.price}}$</div>
+          <img src="../../../assets/images/AddInBasket.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

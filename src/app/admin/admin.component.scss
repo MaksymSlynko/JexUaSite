@@ -1,24 +1,21 @@
 .main-block{
-    position: relative;
-    height: 77.2vh;
-    width: max-content;
     margin-left: 20% ;
     color: white;
-
+    &-all{
+        display: flex;
+    }
 }
 .main-block h1{
-    padding-top: 5vh;
-    text-align: center;
+    padding-top: 4%;
+    text-align: left;
     font-size: 2rem;
 }
 .main-block nav{
-    padding-top: 5vh
+    padding-top: 4%;
+    max-width: 200px;
 }
 .main-block li{
-    display: flex;
-    flex-direction: column;
-    height: 8vh;
-    justify-content: space-evenly;
+    margin: 15px 0px;
 }
 a{
     color: #fff;

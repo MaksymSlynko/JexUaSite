@@ -1,1 +1,89 @@
-<p>basket works!</p>
+<div class="main">
+  <div class="main-block">
+    <div class="main-block-header">
+      <h2>Shopping bag &nbsp;&nbsp;&nbsp;</h2>
+    </div>
+    <div>
+      <div class="main-block-container">
+        <div class="main-block-container-products">
+          <p id="pEmpty" *ngIf="order.length == 0">Your basket empty...</p>
+          <ng-container *ngIf="order.length > 0">
+            <div class="main-block-container-products-full" *ngFor="let o of order; let i=index;">
+              <img class="main-block-container-products-full-image" [src]="o.img" alt="">
+              <div class="main-block-container-products-full-info">
+                <div class="main-block-container-products-full-info-name">
+                  <p id="nameEN">{{o.nameEN}}</p>
+                  <br>
+                  <p id="size" *ngFor="let s of o.sizes">{{s.count}}:{{s.size}}</p>
+                </div>
+                <div class="main-block-container-products-full-info-price">
+                  <div>Price for 1: {{o.price}}$</div>
+                  <div style="color: red;">Total price: {{getTotalCount(o)}}$</div>
+                </div>
+              </div>
+              <button id="remove" (click)="deleteFromBasket(i)">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
+                  height="20px" viewBox="0 0 20 20" version="1.1">
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Asset-1" transform="translate(-10.000000, -8.000000)" fill-rule="nonzero" fill="#000100">
+                      <g id="Lager_20" transform="translate(10.000000, 8.000000)">
+                        <path class="icon"
+                          d="M12.695 10l6.752-6.752a1.887 1.887 0 0 0 0-2.668L19.42.553a1.887 1.887 0 0 0-2.668 0L10 7.305 3.248.553a1.887 1.887 0 0 0-2.668 0L.553.58a1.887 1.887 0 0 0 0 2.668L7.305 10 .553 16.752a1.887 1.887 0 0 0 0 2.668l.027.027a1.887 1.887 0 0 0 2.668 0L10 12.695l6.752 6.752a1.887 1.887 0 0 0 2.668 0l.027-.027a1.887 1.887 0 0 0 0-2.668L12.695 10z"
+                          id="Shape" />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </ng-container>
+          
+
+
+        </div>
+        <div class="main-block-container-inputForm" *ngIf="order.length > 0">
+          <form class="main-block-container-inputForm-panel" [formGroup]="orderForm" (submit)="addOrder()"> 
+            <h1>Apply form:</h1>
+            <div class="main-block-container-inputForm-panel-panelInput">
+              <div>
+                <label>Name:</label>
+                <input type="text" formControlName="name">
+              </div>
+              <div>
+                <label>Second Name:</label>
+                <input type="text" formControlName="secondName">
+              </div>
+            </div>
+            <div class="main-block-container-inputForm-panel-panelInput">
+              <div>
+                <label>Address:</label>
+                <input type="text" formControlName="address">
+              </div>
+              <div>
+                <label>City:</label>
+                <input type="text" formControlName="city">
+              </div>
+              <div>
+                <label>State/Province:</label>
+                <input type="text" formControlName="state">
+              </div>
+              <div>
+                <label>Postal/Zip Code:</label>
+                <input type="number" formControlName="postal">
+              </div>
+            </div>
+            <div class="main-block-container-inputForm-panel-panelInput">
+              <label>Phone number:</label>
+              <input type="number" formControlName="phone">
+            </div>
+            <div class="main-block-container-inputForm-panel-panelInput">
+              <label>Email:</label>
+              <input type="email" formControlName="email">
+            </div>
+            <button class="btn">Order</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>

@@ -1,1 +1,38 @@
-<p>admin-orders works!</p>
+<div class="full">
+  <h1>Order</h1>
+  <div class="full-orderList">
+    <div class="full-orderList-orderItem" *ngFor="let o of orders; let i = index;">
+      <div>
+        <div class="full-orderList-orderItem-contacts">
+          <div>
+            <div class="full-orderList-orderItem-contacts-index">{{i+1}}. </div>
+          </div>
+          <div>
+            <div>Full name: {{o.name}} {{o.secondName}}</div>
+            <div>Address: {{o.address}}</div>
+            <div>City: {{o.city}}</div>
+            <div>Email: {{o.email}}</div>
+            <div>Phone number: {{o.phone}}</div>
+            <div>Zip code: {{o.postal}}</div>
+          </div>
+          <div class="full-orderList-orderItem-contacts-totalPrice">
+              Price for order: {{orderTotalPrice(o.products)}}$
+          </div>
+        </div>
+      </div>
+      <div class="full-orderList-orderItem-products">
+        <div class="full-orderList-orderItem-products-product" *ngFor="let p of o.products">
+          <img [src]="p.img" alt="">
+          <div>
+            <div>{{p.nameUA}}</div>
+            <p id="size" *ngFor="let s of p.sizes">{{s.count}}:{{s.size}}</p>
+            <div>Unit price: {{p.price}}$</div>
+            <div>Total price: {{getTotalCount(p)}}$</div>
+            <br>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

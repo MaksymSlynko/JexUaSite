@@ -1,15 +1,18 @@
 <div class="main-block">
     <h1>ADMIN PANEL</h1>
-    <nav>
-      <ul>
-        <li><a [routerLink]="[ 'devices' ]" routerLinkActive="active-link">Devices</a></li>
-        <li><a [routerLink]="[ 'videos' ]" routerLinkActive="active-link">Videos</a></li>
-        <li><a [routerLink]="[ 'category' ]" routerLinkActive="active-link">Category</a></li>
-        <li><a [routerLink]="[ 'products' ]" routerLinkActive="active-link">Products</a></li>
-        <li><a [routerLink]="[ 'sales' ]" routerLinkActive="active-link">Sales</a></li>
-        <li><a [routerLink]="[ 'orders' ]" routerLinkActive="active-link">Orders</a></li>
-      </ul>
-    </nav>
+    <div class="main-block-all">
+      <nav>
+        <ul>
+          <li><a [routerLink]="[ 'devices' ]" routerLinkActive="active-link">Devices</a></li>
+          <li><a [routerLink]="[ 'videos' ]" routerLinkActive="active-link">Videos</a></li>
+          <li><a [routerLink]="[ 'category' ]" routerLinkActive="active-link">Category</a></li>
+          <li><a [routerLink]="[ 'products' ]" routerLinkActive="active-link">Products</a></li>
+          <li><a [routerLink]="[ 'sales' ]" routerLinkActive="active-link">Sales</a></li>
+          <li><a [routerLink]="[ 'orders' ]" routerLinkActive="active-link">Orders</a></li>
+        </ul>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+    
   </div>
-  <router-outlet></router-outlet>
   

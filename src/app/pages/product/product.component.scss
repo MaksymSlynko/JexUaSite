@@ -1,0 +1,336 @@
+@import 'src/assets/styles/variables.scss';
+
+.main {
+  position: relative;
+  background: url(../../../assets/images/ShopBack.png);
+  background-repeat: no-repeat;
+  background-position: 900px 145px;
+  background-size: 31%;
+}
+
+.main-block {
+  position: relative;
+  min-height: 78vh;
+  width: 60%;
+  margin-left: 400px;
+  color: $white;
+}
+
+.main-header {
+  width: max-content;
+  padding-top: 58px;
+  padding-bottom: 48px;
+
+  & h2 {
+    text-align: left;
+    font-family: 'Audiowide', cursive;
+    font-size: 36px;
+    line-height: 46px;
+    border-bottom: 2px solid $red;
+  }
+}
+
+.info a {
+  color: white;
+  font-family: 'Jura', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+.info {
+  padding-top: 60px;
+  width: 90%;
+
+  &-name {
+    width: max-content;
+    padding-top: 35px;
+    padding-bottom: 48px;
+  }
+
+  &-name h2 {
+    color: white;
+    text-align: left;
+    font-family: 'Jura', sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  &-product {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    min-width: 500px;
+    min-height: 300px;
+
+    &-image {
+      width: 344px;
+      height: 419px;
+      object-fit: contain;
+      object-position: center;
+      background: #fff;
+      border-radius: 15px;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      color: #fff;
+
+      &-about {
+        height: 50%;
+        font-family: 'Jura', sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+      &-buttons {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      &-buttons select {
+        padding: 13px 20px 13px 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        font-family: 'Jura', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        color: #171515;
+      }
+
+      &-buttons-add button {
+        width: 250px;
+        height: 50px;
+        background: #171515;
+        border: 1px solid #DB0030;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & span {
+          font-family: 'Jura', sans-serif;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 21px;
+          color: #FFFFFF;
+        }
+      }
+
+      &-buttons-add button:hover {
+        background-color: red;
+        border: 3px double white;
+        cursor: pointer;
+      }
+
+      &-buttons-add button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.info a:hover {
+  color: red;
+}
+
+.count {
+  display: flex;
+
+  &-text {
+    color: #fff;
+    margin: 0px 7px 0px 7px;
+    text-align: center;
+    width: 40px;
+    border: 1px solid white;
+    background-color: black;
+  }
+
+  &-minus,
+  &-plus {
+    color: $red;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &-minus:hover,
+  &-plus:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media screen and (max-width: 1300px) {
+  .main-block {
+    margin-left: 300px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    background-position: 400px 200px;
+    background-size: 55%;
+  }
+
+  .main-block {
+    margin-left: 200px;
+    height: unset;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 29px;
+      line-height: 44px;
+    }
+  }
+
+  .info-prouct{
+    min-width: 440px;
+  }
+
+  .info-product-image {
+    width: 220px;
+    height: 320px;
+  }
+
+  .info-product-right-buttons,
+  .info-product-right-buttons-add button {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    background-position: 150px 70px;
+  }
+
+  .main-block {
+    margin-left: 150px;
+    min-height: 81vh;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+
+  .info-product-image {
+    min-width: 180px;
+    min-height: 270px;
+  }
+  .info-product-right{
+    min-width: 180px;
+    min-height: 270px;
+  }
+
+  // .info-product-right-buttons, .info-product-right-buttons-add button{
+  //   width: 180px;
+  // }
+}
+
+@media screen and (max-width: 650px) {
+  .info-product-image {
+    min-width: 130px;
+    min-height: 200px;
+  }
+  .info-product-right{
+    min-width: 130px;
+    min-height: 200px;
+  }
+  .info-product-right-buttons,
+  .info-product-right-buttons-add button {
+    width: 130px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .main-block {
+    margin-left: 30px;
+    background-position: 0px 70px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .info-product{
+    min-width: 280px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-product-image {
+    min-width: 150px;
+    min-height: 150px;
+  }
+  .info-product-right{
+    min-width: 200px;
+    min-height: 200px;
+  }
+  .info-product-right-buttons,
+  .info-product-right-buttons-add button {
+    width: 200px;
+  }
+  .info-product-right-about :nth-child(1){
+    text-align: center;
+  }
+  .info-product-right-about{
+    font-size: 17px;
+  }
+  .count{
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  
+}
+
+@media screen and (max-width: 360px) {
+
+  .main-block {
+    height: max-content;
+    margin-left: 0px;
+    padding: 0px 15px 0px 15px;
+    background-position: -50px 50px;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 28px;
+    padding-bottom: 18px;
+
+    & h2 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+
+}

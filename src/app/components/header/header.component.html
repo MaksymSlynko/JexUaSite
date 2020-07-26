@@ -4,11 +4,11 @@
     <div class="header-pannel-nav">
       <nav role="navigation">
         <div id="menuToggle">
-          <input type="checkbox" checked />
+          <input type="checkbox" [(ngModel)]="isMenuOpened" [disabled]="isDesktop"/>
           <span></span>
           <span></span>
           <span></span>
-          <ul id="menu">
+          <ul id="menu" (click)="closeHenu()">
             <a [routerLink]="[ '/main' ]" routerLinkActive="active-link">
               <li>Main</li>
             </a>
@@ -25,7 +25,7 @@
               <li>Basket&nbsp;{{suma}}$</li>
             </a>
             <a [routerLink]="[ '/admin' ]" routerLinkActive="active-link">
-              <li>Admin pannel</li>
+              <li>Admin</li>
             </a>
           </ul>
         </div>

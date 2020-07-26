@@ -1,1 +1,27 @@
-<p>videos works!</p>
+<div class="main">
+  <div class="main-block">
+    <div class="main-header">
+      <h2>Videos &nbsp;&nbsp;&nbsp;</h2>
+    </div>
+    <div class="main-container">
+      <ngx-slick-carousel class="main-container-slick" [config]='slideConfig'>
+        <div ngxSlickItem *ngFor="let v of videos.reverse()" class="videos">
+          <youtube-player [videoId]="getVideoId(v.url)"></youtube-player>
+          <div class="videos-name">{{v.name}}</div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="main-containerSmall">
+      <div *ngFor="let v of videos.reverse()" class="videosSmall">
+        <youtube-player [height]="200" [width]="300" [videoId]="getVideoId(v.url)"></youtube-player>
+        <div class="videosSmall-name">{{v.name}}</div>
+      </div>
+    </div>
+    <div class="main-containerSmall_2">
+      <div *ngFor="let v of videos.reverse()" class="videosSmall_2">
+        <youtube-player [height]="150" [width]="240" [videoId]="getVideoId(v.url)"></youtube-player>
+        <div class="videosSmall-name">{{v.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

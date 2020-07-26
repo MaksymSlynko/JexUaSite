@@ -3,12 +3,10 @@
 .main-block {
   position: relative;
   height: 78vh;
-//   width: 100%;
-  margin-left: 300px;
+  margin-left: 400px;
   background: url(../../../assets/images/strelok.png);
   background-repeat: no-repeat;
   background-position: 600px 100px;
-//   background-size: 45%;
   color: $white;
 }
 
@@ -33,6 +31,11 @@
   width: 700px;
 }
 
+@media screen and (max-width: 1300px){
+    .main-block{
+        margin-left: 300px;
+    }
+}
 @media screen and (max-width: 1024px){
     .main-block{
         margin-left: 200px;
@@ -89,7 +92,7 @@
 }
 @media screen and (max-width: 360px){
     .main-block{
-        height: 85vh;
+        height: max-content;
         margin-left: 0px;
         padding: 0px 15px 0px 15px;
         background-position: -50px 50px;
@@ -106,7 +109,7 @@
       }
     .main-container-text p {
         font-size: 14px;
-        line-height: 20px;
+        line-height: 15px;
         width: 330px;
       }
 }

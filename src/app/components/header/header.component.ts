@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { OrdersService } from 'src/app/shared/services/orders/orders.service';
 import { Product } from 'src/app/shared/models/product.model';
 
@@ -11,6 +11,8 @@ export class HeaderComponent implements OnInit {
 
   getProducts: Array<any> = [];
   suma = 0;
+  isMenuOpened = true;
+  isDesktop = window.innerWidth >= 1025;
 
   constructor(private ordersService: OrdersService) { }
 
@@ -18,6 +20,14 @@ export class HeaderComponent implements OnInit {
     this.productLength();
     this.getBasket();
     console.log(this.suma)
+  }
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.isDesktop = window.innerWidth >= 1025;
+    if (this.isDesktop && !this.isMenuOpened) {
+      this.isMenuOpened = true;
+    }
   }
 
   private productLength(): void{
@@ -40,4 +50,10 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+
+  closeHenu = () => {
+    if (!this.isDesktop) {
+      this.isMenuOpened = false;
+    }
+  }
 }

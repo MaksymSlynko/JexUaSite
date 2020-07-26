@@ -70,7 +70,7 @@
 }
 
 #menuToggle span {
-  display: block;
+  display: none;
   width: 27px;
   height: 2px;
   margin-bottom: 5px;
@@ -113,14 +113,14 @@
 
 #menu {
   position: absolute;
-  width: 300px;
+  width: max-content;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  transform: translate(-150%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
@@ -130,6 +130,7 @@
   line-height: 15px;
   font-family: 'Black Ops One', cursive;
 }
+
 #menu a:first-child li {
   padding-top: 50px;
 }
@@ -146,15 +147,37 @@
   left: 100px;
   border-left: 1px solid $red;
   border-right: 1px solid $red;
+  pointer-events: none;
 }
 
 .active-link {
   color: $red !important;
 }
 
+@media screen and (max-width: 1600px) {
+  #sideLines {
+    left: 85px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #sideLines {
+    left: 73px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #sideLines {
+    left: 65px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header-pannel-nav {
     width: 50%;
+    #menuToggle span {
+      display: block;
+    }
   }
 
   .header-pannel-social {
@@ -162,11 +185,9 @@
     padding-right: 50px;
     width: 50%;
   }
-  #menu a:first-child li {
-    padding-top: initial;
-  }
-  #sideLines{
-   left: 50px;
+
+  #sideLines {
+    left: 50px;
   }
 }
 
@@ -197,16 +218,28 @@
         justify-content: space-evenly;
       }
     }
+
+  }
+
+  #menu a:first-child li {
+    padding-top: initial;
   }
 
   #menu li {
     padding: 15px 0px;
     font-size: 14px;
   }
-  #sideLines{
-    display: none;
-   }
 
+  #sideLines {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 570px) {
+  #menu {
+    background-color: $lightDark;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -236,5 +269,6 @@
 
   #menu {
     padding-top: 110px;
+    background-color: $lightDark;
   }
 }

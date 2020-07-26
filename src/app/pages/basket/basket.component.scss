@@ -1,0 +1,368 @@
+@import 'src/assets/styles/variables.scss';
+
+.main {
+  position: relative;
+  background: url(../../../assets/images/devicesBack.png);
+  background-repeat: no-repeat;
+  background-position: 900px 100px;
+}
+
+.main-block {
+  position: relative;
+  min-height: 78vh;
+  width: 60%;
+  margin-left: 400px;
+  color: $white;
+
+  &-header {
+    width: max-content;
+    padding-top: 58px;
+    padding-bottom: 48px;
+
+    & h2 {
+      text-align: left;
+      font-family: 'Audiowide', cursive;
+      font-size: 36px;
+      line-height: 46px;
+      border-bottom: 2px solid red;
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+
+    &-products {
+      min-width: 600px;
+      display: flex;
+      flex-direction: column;
+
+      &-full {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        // border: 1px dashed white;
+
+        &-image {
+          width: 150px;
+          height: 150px;
+          margin: 10px;
+          object-fit: contain;
+          object-position: center;
+          background: #fff;
+          border-radius: 15px;
+        }
+
+        &-info {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: left;
+
+          &-name #nameEN {
+            color: #fff;
+            font-family: 'Jura', sans-serif;
+            font-size: 18px;
+            line-height: 21px;
+          }
+
+          &-name #size {
+            color: #fff;
+            font-family: 'Jura', sans-serif;
+            font-size: 14px;
+            line-height: 17px;
+          }
+
+          &-price {
+            padding-bottom: 20px;
+            align-items: center;
+            color: #fff;
+            font-family: 'Jura', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+          }
+        }
+
+      }
+
+      &-full button {
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+      }
+
+      &-full button:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-inputForm {
+      min-width: 600px;
+      &-panel h1{
+        padding-bottom: 30px;
+        text-align: center;
+        font-size: 20px;
+      }
+      &-panel {
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        &-panelInput div{
+          margin: 7px 0px;
+        }
+        &-panelInput{
+          margin: 20px 0px;
+        }
+      }
+
+
+    }
+  }
+
+
+}
+
+.icon {
+  fill: $white;
+}
+
+.icon:hover {
+  cursor: pointer;
+  fill: $red;
+}
+
+#pEmpty {
+  color: white;
+  font-family: 'Jura', sans-serif;
+  font-size: 25px;
+}
+
+.green {
+  color: green !important;
+}
+
+.red {
+  color: red !important;
+}
+
+@media screen and (max-width: 1300px) {
+  .main-block {
+    margin-left: 300px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    background-position: 400px 200px;
+    background-size: 55%;
+  }
+
+  .main-block {
+    margin-left: 200px;
+    height: unset;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 29px;
+      line-height: 44px;
+    }
+  }
+
+  .main-container {
+    display: none;
+  }
+
+  .main-containerSmall {
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 924px) {
+  .main {
+    background-position: 400px 200px;
+    background-size: 55%;
+  }
+
+  .main-block {
+    margin-left: 200px;
+    min-height: unset;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 29px;
+      line-height: 44px;
+    }
+  }
+
+  .main-container {
+    display: none;
+  }
+
+  .main-containerSmall {
+    display: none;
+  }
+
+  .main-containerSmall_2 {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    background-position: 150px 70px;
+  }
+
+  .main-block {
+    margin-left: 150px;
+
+    min-height: max-content;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 48px;
+    padding-bottom: 38px;
+
+    & h2 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    background: none;
+  }
+
+  .main-block {
+    margin-bottom: 50px;
+  }
+
+  .main-containerSmall {
+    width: 400px;
+    display: flex;
+  }
+
+  .main-containerSmall_2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .main-block {
+    margin-left: 30px;
+    background-position: 0px 70px;
+  }
+
+  .main-container {
+    display: none;
+  }
+
+  .main-containerSmall {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-device {
+      height: 200px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &-image {
+        width: 130px;
+        height: 130px;
+        object-fit: contain;
+        object-position: center;
+        background: #171515;
+        border-radius: 15px;
+      }
+
+      &-name {
+        width: 130px;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 28px;
+        font-family: 'Jura', sans-serif;
+      }
+
+      &-description {
+        width: 130px;
+        height: 16px;
+        font-family: 'Jura', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 535px) {
+  .main-containerSmall {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .main-containerSmall {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .main-block {
+    min-height: max-content;
+    margin-left: 0px;
+    padding: 0px 15px 0px 15px;
+    background-position: -50px 50px;
+  }
+
+  .main-header {
+    width: max-content;
+    padding-top: 28px;
+    padding-bottom: 18px;
+
+    & h2 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+
+}
