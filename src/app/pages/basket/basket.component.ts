@@ -24,8 +24,11 @@ export class BasketComponent implements OnInit {
         city: ['', [Validators.required]],
         state: ['', [Validators.required]],
         postal: ['', [Validators.required]],
-        phone: ['', [Validators.required]],
-        email: ['', [Validators.required]]
+        phone: ['', [Validators.required, Validators.pattern("[0-9]{12}")]],
+        email: ['', [Validators.required, Validators.email]]
+      });
+      this.orderForm.valueChanges.subscribe(e => {
+        console.log(this.orderForm);
       })
      }
 

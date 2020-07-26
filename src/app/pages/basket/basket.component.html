@@ -37,12 +37,12 @@
               </button>
             </div>
           </ng-container>
-          
+
 
 
         </div>
         <div class="main-block-container-inputForm" *ngIf="order.length > 0">
-          <form class="main-block-container-inputForm-panel" [formGroup]="orderForm" (submit)="addOrder()"> 
+          <form class="main-block-container-inputForm-panel" [formGroup]="orderForm" (submit)="addOrder()">
             <h1>Apply form:</h1>
             <div class="main-block-container-inputForm-panel-panelInput">
               <div>
@@ -74,13 +74,19 @@
             </div>
             <div class="main-block-container-inputForm-panel-panelInput">
               <label>Phone number:</label>
-              <input type="number" formControlName="phone">
+              <input type="number" formControlName="phone" max="12">
+              <ng-container *ngIf="orderForm.controls.phone.errors && orderForm.controls.phone.touched">
+                <div *ngIf="orderForm.controls.phone.errors.required">This field is required.</div>
+                <div *ngIf="orderForm.controls.phone.errors.pattern">Invalid phone number.</div>
+              </ng-container>
+              
+             
             </div>
             <div class="main-block-container-inputForm-panel-panelInput">
               <label>Email:</label>
               <input type="email" formControlName="email">
             </div>
-            <button class="btn">Order</button>
+            <button class="btn" [disabled]="orderForm.invalid">Order</button>
           </form>
         </div>
       </div>

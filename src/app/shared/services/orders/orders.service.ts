@@ -34,8 +34,8 @@ export class OrdersService {
     return this.db.collection<IOrder>('Order').add(order);
   }
 
-  public deleteOrder(order: IOrder) {
-    return this.db.collection<IOrder>('Order').doc(order.id).delete();
+  public deleteOrder(id: string) {
+    return this.db.collection<IOrder>('Order').doc(id).delete();
   }
 
   public editOrder(order: IOrder) {

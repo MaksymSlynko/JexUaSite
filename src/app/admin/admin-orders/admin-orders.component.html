@@ -18,6 +18,7 @@
           <div class="full-orderList-orderItem-contacts-totalPrice">
               Price for order: {{orderTotalPrice(o.products)}}$
           </div>
+            <button (click)="deleteOrder(o.id)"></button>
         </div>
       </div>
       <div class="full-orderList-orderItem-products">

@@ -27,7 +27,9 @@ export class AdminOrdersComponent implements OnInit {
     });
   }
   deleteOrder(id): void{
-    this.orderService.deleteOrder(id);
+    this.orderService.deleteOrder(id).then(() => {
+      this.loadOrders();
+    });;
   }
   public getTotalCount(product: IProduct): number {
     return Product.totalPrice(product);
