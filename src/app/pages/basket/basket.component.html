@@ -119,7 +119,7 @@
                 <div class="validators" *ngIf="orderForm.controls.email.errors.pattern">Invalid email.</div>
               </ng-container>
             </div>
-            <button mat-stroked-button (click)="openSnackBar()" class="btn" [disabled]="orderForm.invalid">Order</button>
+            <button class="btn" [disabled]="orderForm.invalid">Order</button>
             
           </form>
         </div>
