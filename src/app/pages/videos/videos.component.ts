@@ -20,7 +20,6 @@ export class VideosComponent implements OnInit {
     this.videosService.getAll()
       .subscribe(e => {
         this.videos = e;
-        console.log(e[0].url)
       });
   }
 

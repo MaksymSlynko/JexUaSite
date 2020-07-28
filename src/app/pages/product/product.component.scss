@@ -281,7 +281,7 @@ input::-webkit-inner-spin-button {
 
 @media screen and (max-width: 535px) {
   .info-product{
-    min-width: 280px;
+    min-width: 340px;
     padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
@@ -310,6 +310,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 435px) {
+  .info-product{
+    min-width: 280px;
+  }
   
 }
 
@@ -317,7 +320,6 @@ input::-webkit-inner-spin-button {
 
   .main-block {
     height: max-content;
-    margin-left: 0px;
     padding: 0px 15px 0px 15px;
     background-position: -50px 50px;
   }

@@ -1,1 +1,37 @@
-<p>admin-videos works!</p>
+<div class="add">
+  <div class="add-panel">
+    <form class="panel" [formGroup]="videosForm" (submit)="addVideo()">
+      <h1>Adding panel for videos</h1>
+      <div class="add-panel-input">
+        <label>Video url:</label>
+        <input type="text" placeholder="write url for video" formControlName="url">
+      </div>
+      <div class="add-panel-input">
+        <label>Video name:</label>
+        <input type="text" placeholder="write header for your video" formControlName="name">
+      </div>
+      <div class="button">
+        <button class="btn">{{ videosForm.value.id ? 'EDIT' : 'ADD' }}</button>
+      </div>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>url</th>
+      <th>name</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of videos; let i=index">
+        <td>{{i + 1}}</td>
+        <td>{{v.name}}</td>
+        <td>{{v.url}}</td>
+        <td><button (click)="editVideo(v)">Edit</button></td>
+        <td><button (click)="deleteVideo(v)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,55 @@
-<p>admin-products works!</p>
+<div class="add">
+  <div class="add-panel">
+    <form class="panel" [formGroup]="productsForm" (submit)="addProduct()">
+      <h1>Adding panel for products</h1>
+      <div class="add-panel-input">
+        <label>Name UA:</label>
+        <input type="text" placeholder="name of product in UA" formControlName="nameUA">
+      </div>
+      <div class="add-panel-input">
+        <label>Name EN:</label>
+        <input type="text" placeholder="name of product in EN" formControlName="nameEN">
+      </div>
+      <div class="add-panel-input">
+        <label>Size:</label>
+        <input type="text" placeholder="write size like s/m/l" formControlName="size">
+      </div>
+      <div class="add-panel-input">
+        <label>Price:</label>
+        <input type="number" placeholder="write the price of product" formControlName="price">
+      </div>
+      <div class="add-panel-input">
+        <label>Image:</label>
+        <input type="text" placeholder="write url for image product" formControlName="img">
+      </div>
+      <div class="button">
+        <button class="btn">{{ productsForm.value.id ? 'EDIT' : 'ADD' }}</button>
+      </div>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>NameUA</th>
+      <th>NameEN</th>
+      <th>Size</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{p.nameUA}}</td>
+        <td>{{p.nameEN}}</td>
+        <td>{{p.size}}</td>
+        <td>{{p.price}}</td>
+        <td><img [src]="p.img" alt=""></td>
+        <td><button (click)="editProduct(p)">Edit</button></td>
+        <td><button (click)="deleteProduct(p)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

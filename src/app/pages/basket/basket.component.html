@@ -37,9 +37,6 @@
               </button>
             </div>
           </ng-container>
-
-
-
         </div>
         <div class="main-block-container-inputForm" *ngIf="order.length > 0">
           <form class="main-block-container-inputForm-panel" [formGroup]="orderForm" (submit)="addOrder()">
@@ -47,46 +44,83 @@
             <div class="main-block-container-inputForm-panel-panelInput">
               <div>
                 <label>Name:</label>
+                <br>
                 <input type="text" formControlName="name">
+                <ng-container *ngIf="orderForm.controls.name.errors && orderForm.controls.name.touched">
+                  <div class="validators" *ngIf="orderForm.controls.name.errors.required">This field is required.</div>
+                </ng-container>
               </div>
               <div>
                 <label>Second Name:</label>
+                <br>
                 <input type="text" formControlName="secondName">
+                <ng-container *ngIf="orderForm.controls.secondName.errors && orderForm.controls.secondName.touched">
+                  <div class="validators" *ngIf="orderForm.controls.secondName.errors.required">This field is required.
+                  </div>
+                </ng-container>
               </div>
             </div>
             <div class="main-block-container-inputForm-panel-panelInput">
               <div>
                 <label>Address:</label>
+                <br>
                 <input type="text" formControlName="address">
+                <ng-container *ngIf="orderForm.controls.address.errors && orderForm.controls.address.touched">
+                  <div class="validators" *ngIf="orderForm.controls.address.errors.required">This field is required.
+                  </div>
+                </ng-container>
               </div>
               <div>
                 <label>City:</label>
+                <br>
                 <input type="text" formControlName="city">
+                <ng-container *ngIf="orderForm.controls.city.errors && orderForm.controls.city.touched">
+                  <div class="validators" *ngIf="orderForm.controls.city.errors.required">This field is required.</div>
+                </ng-container>
               </div>
               <div>
                 <label>State/Province:</label>
+                <br>
                 <input type="text" formControlName="state">
+                <ng-container *ngIf="orderForm.controls.state.errors && orderForm.controls.state.touched">
+                  <div class="validators" *ngIf="orderForm.controls.state.errors.required">This field is required.</div>
+                </ng-container>
               </div>
               <div>
                 <label>Postal/Zip Code:</label>
-                <input type="number" formControlName="postal">
+                <br>
+                <input type="number" formControlName="postal"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  type="number" maxlength="5">
+                <ng-container *ngIf="orderForm.controls.postal.errors && orderForm.controls.postal.touched">
+                  <div class="validators" *ngIf="orderForm.controls.postal.errors.required">This field is required.
+                  </div>
+                  <div class="validators" *ngIf="orderForm.controls.postal.errors.pattern">Invalid postal number.</div>
+                </ng-container>
               </div>
             </div>
             <div class="main-block-container-inputForm-panel-panelInput">
               <label>Phone number:</label>
-              <input type="number" formControlName="phone" max="12">
+              <br>
+              <input type="number" formControlName="phone"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                type="number" maxlength="12">
               <ng-container *ngIf="orderForm.controls.phone.errors && orderForm.controls.phone.touched">
-                <div *ngIf="orderForm.controls.phone.errors.required">This field is required.</div>
-                <div *ngIf="orderForm.controls.phone.errors.pattern">Invalid phone number.</div>
+                <div class="validators" *ngIf="orderForm.controls.phone.errors.required">This field is required.</div>
+                <div class="validators" *ngIf="orderForm.controls.phone.errors.pattern">Invalid phone number should be 12 numerals(1-9).</div>
               </ng-container>
-              
-             
             </div>
             <div class="main-block-container-inputForm-panel-panelInput">
               <label>Email:</label>
+              <br>
               <input type="email" formControlName="email">
+              <ng-container *ngIf="orderForm.controls.email.errors && orderForm.controls.email.touched">
+                <div class="validators" *ngIf="orderForm.controls.email.errors.required">This field is required.</div>
+                <div class="validators" *ngIf="orderForm.controls.email.errors.pattern">Invalid email.</div>
+              </ng-container>
             </div>
-            <button class="btn" [disabled]="orderForm.invalid">Order</button>
+            <button mat-stroked-button (click)="openSnackBar()" class="btn" [disabled]="orderForm.invalid">Order</button>
+            
           </form>
         </div>
       </div>

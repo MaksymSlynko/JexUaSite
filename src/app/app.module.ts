@@ -31,6 +31,13 @@ import { environment } from 'src/environments/environment';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AboutProductComponent } from './pages/about-product/about-product.component';
 
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+import { ngxUiLoader } from './shared/helpers/preloader-config';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +57,8 @@ import { AboutProductComponent } from './pages/about-product/about-product.compo
     AdminDevicesComponent,
     AdminVideosComponent,
     ProductComponent,
-    AboutProductComponent
+    AboutProductComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,12 @@ import { AboutProductComponent } from './pages/about-product/about-product.compo
     AngularFirestoreModule,
     ReactiveFormsModule,
     SlickCarouselModule,
-    NgxYoutubePlayerModule.forRoot()
+    NgxYoutubePlayerModule.forRoot(),
+    NgxUiLoaderModule.forRoot(ngxUiLoader),
+    NgxUiLoaderRouterModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,12 +16,17 @@
   padding-bottom: 48px;
 
   & h2 {
+    position: relative;
     text-align: left;
     font-family: 'Audiowide', cursive;
     font-size: 36px;
     line-height: 46px;
+    // padding: 50px;
+    // display: inline-block;
     border-bottom: 2px solid $red;
+    
   }
+  
 }
 
 .main-container-text p {

@@ -1,4 +1,5 @@
-<div class="add-panel">
+<div class="add">
+  <div class="add-panel">
     <form class="panel" [formGroup]="deviceForm" (submit)="addDevice()">
       <h1>Adding panel for devices</h1>
       <div class="add-panel-input">
@@ -13,10 +14,12 @@
         <label>Model:</label>
         <input type="text" placeholder="write model of your device" formControlName="description">
       </div>
-      <button class="btn">{{ deviceForm.value.id ? 'EDIT' : 'ADD' }}</button>
+      <div class="button">
+        <button class="btn">{{ deviceForm.value.id ? 'EDIT' : 'ADD' }}</button>
+      </div>
     </form>
   </div>
-  
+
   <table>
     <thead>
       <th>Id</th>
@@ -31,9 +34,10 @@
         <td>{{i + 1}}</td>
         <td>{{item.name}}</td>
         <td>{{item.description}}</td>
-        <td>{{item.img}}</td>
+        <td><img [src]="item.img" alt=""></td>
         <td><button (click)="editDevice(item)">Edit</button></td>
         <td><button (click)="deleteDevice(item)">Delete</button></td>
       </tr>
     </tbody>
   </table>
+</div>
