@@ -16,21 +16,21 @@ export class BasketComponent implements OnInit {
   counter = 1;
 
   constructor(private ordersService: OrdersService,
-    private fb: FormBuilder) {
-    this.orderForm = this.fb.group({
-      name: ['', [Validators.required]],
-      secondName: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      postal: ['', [Validators.required, Validators.pattern("[0-9]{5}")]],
-      phone: ['', [Validators.required, Validators.pattern("[0-9]{12}")]],
-      email: ['', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}")]]
-    });
-    this.orderForm.valueChanges.subscribe(e => {
-      console.log(this.orderForm);
-    })
-  }
+    private fb: FormBuilder,) {
+      this.orderForm = this.fb.group({
+        name: ['', [Validators.required]],
+        secondName: ['', [Validators.required]],
+        address: ['', [Validators.required]],
+        city: ['', [Validators.required]],
+        state: ['', [Validators.required]],
+        postal: ['', [Validators.required, Validators.pattern("[0-9]{5}")]],
+        phone: ['', [Validators.required, Validators.pattern("[0-9]{12}")]],
+        email: ['', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}")]]
+      });
+      this.orderForm.valueChanges.subscribe(e => {
+        console.log(this.orderForm);
+      })
+     }
 
   ngOnInit(): void {
     this.getProductsFromBasket();
@@ -53,7 +53,7 @@ export class BasketComponent implements OnInit {
       localStorage.setItem('basket', JSON.stringify(this.order));
       this.ordersService.basket.next()
     }
-  }
+  } 
 
   clearBasket = () => {
     this.order = [];
@@ -64,12 +64,12 @@ export class BasketComponent implements OnInit {
   public getTotalCount(product: IProduct): number {
     return Product.totalPrice(product);
   }
-
-  addOrder(): void {
+  
+  addOrder():void{
     console.log(this.orderForm.value)
     const result = {
       ...this.orderForm.value,
-
+      
       orderItems: JSON.stringify(this.order)
     }
     this.ordersService.addOrderToFb(result).then(() => {

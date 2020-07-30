@@ -1,13 +1,15 @@
 @import 'src/assets/styles/variables.scss';
 
 .full {
-  margin: 50px 50px;
+  margin: 50px 200px;
   color: $white;
 
   &-orderList {
     &-orderItem {
       display: flex;
       flex-direction: column;
+      border-bottom: 3px solid white;
+      margin-bottom: 20px;
 
       &-contacts {
         display: flex;

@@ -1,0 +1,23 @@
+.main{
+    margin-top: 200px;
+    & form{
+        width: 200px;
+        margin: 0 auto;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        & label{
+            margin: 10px 0;
+        }
+        & button{
+            margin: 20px auto;
+            width: 100px;
+            background-color: green;
+        }
+        & button:hover{
+            cursor: pointer;
+            
+        }
+    }
+}

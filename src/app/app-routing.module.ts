@@ -16,6 +16,8 @@ import { AdminSalesComponent } from './admin/admin-sales/admin-sales.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminDevicesComponent } from './admin/admin-devices/admin-devices.component';
 import { AdminVideosComponent } from './admin/admin-videos/admin-videos.component';
+import { LoginComponent } from './login/login/login.component'
+import { AuthGuard } from './shared/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'shop/:id', component: ProductComponent},
   { path: 'basket', component: BasketComponent},
   { path: 'payment', component: PaymentComponent},
-  { path: 'admin', component: AdminComponent, children:[
+  { path: 'login', component: LoginComponent},
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children:[
     {path: '', pathMatch: 'full', redirectTo: 'devices'},
     {path: 'devices', component: AdminDevicesComponent},
     {path: 'videos', component: AdminVideosComponent},
